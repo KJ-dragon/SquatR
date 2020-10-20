@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+.macro {
+	width: 100px;
+	margin-right: 10px;
+}
+
+.kcal {
+	width: 100px;
+}
+
+.list-group-item-action :hover {
+	background: #9ac5f396;
+}
