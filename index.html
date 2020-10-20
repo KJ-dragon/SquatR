@@ -27,7 +27,41 @@
     
     <script type="text/javascript">
 
+	$(function(){
 			
+	    	<%	
+	    		int cd_no = 1;
+	    		request.setAttribute("cd_no", cd_no);
+	    		
+	    		int user_no = 0;
+	    		
+	    		if (session.getAttribute("user_no") != null) {
+	    			user_no = (Integer)session.getAttribute("user_no");
+	    		}
+	
+	    		if(user_no != 0){	%>
+				
+	    		$('#nickCheck').text("Log Out");
+	    		$('#nickCheck').attr("href", '<%=request.getContextPath()%>/member/userLogout.do');
+	    		$('#signUp').text("Profile");
+	    		$('#signUp').attr("href", '<%=request.getContextPath()%>/member/myPage.do');
+	    		
+	    	<%	}else{ %>
+	    	
+	    		//$('#signUp').show();
+	    	
+			<%	}	%> 
+				
+			<%	String gb = (String)session.getAttribute("gb");
+				String path = "";
+				path = request.getContextPath();
+				if(gb != null && gb.equals("Y")){	%>
+				code = '<a class="navbar-brand" href="<%=path%>/mmain.do">관리자SSS</a>';
+				$('#checkAdmin').prepend(code);
+			<%	}	%>
+				
+				
+		});			
     
     </script>
     
