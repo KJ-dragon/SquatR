@@ -152,7 +152,7 @@
 								if(status == "squat"){
 									count++
 									success = "좋습니다!!"
-									if(count > reps) {
+									if(count < reps) {
 										$('#count').text("Count : " + count)
 									}else {
 										$('#count').text("목표 횟수를 달성했습니다!!")
