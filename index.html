@@ -27,41 +27,7 @@
     
     <script type="text/javascript">
 
-	$(function(){
-			
-	    	<%	
-	    		int cd_no = 1;
-	    		request.setAttribute("cd_no", cd_no);
-	    		
-	    		int user_no = 0;
-	    		
-	    		if (session.getAttribute("user_no") != null) {
-	    			user_no = (Integer)session.getAttribute("user_no");
-	    		}
-	
-	    		if(user_no != 0){	%>
 				
-	    		$('#nickCheck').text("Log Out");
-	    		$('#nickCheck').attr("href", '<%=request.getContextPath()%>/member/userLogout.do');
-	    		$('#signUp').text("Profile");
-	    		$('#signUp').attr("href", '<%=request.getContextPath()%>/member/myPage.do');
-	    		
-	    	<%	}else{ %>
-	    	
-	    		//$('#signUp').show();
-	    	
-			<%	}	%> 
-				
-			<%	String gb = (String)session.getAttribute("gb");
-				String path = "";
-				path = request.getContextPath();
-				if(gb != null && gb.equals("Y")){	%>
-				code = '<a class="navbar-brand" href="<%=path%>/mmain.do">관리자SSS</a>';
-				$('#checkAdmin').prepend(code);
-			<%	}	%>
-				
-				
-		});			
     
     </script>
     
@@ -91,7 +57,7 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="<%=request.getContextPath()%>/member/diary.do">일지</a></li>
+                    <li class="nav-item"><a class="nav-link" href="http://localhost/sss/diary/diary.do">일지</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://happy-kare-99d044.netlify.app/">AI트레이너</a></li>
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">커뮤니티</a>
                         	
